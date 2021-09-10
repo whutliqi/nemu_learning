@@ -32,7 +32,9 @@ static int cmd_p(char *args){
   if(args == NULL)
 	return 0;
   bool b;
-  expr(args, &b);
+  int res;
+  res = expr(args, &b);
+  printf("the result is %d\n", res);
   return 0;
 }
 

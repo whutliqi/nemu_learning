@@ -128,7 +128,9 @@ word_t expr(char *e, bool *success) {
   }
 
   /* TODO: Insert codes to evaluate the expression. */
-  
+  for(int i = 0 ; i<nr_token; i++){
+	printf("type is %c\n", tokens[i].type); 
+  }
 
   return 0;
 }
