@@ -86,7 +86,22 @@ static bool make_token(char *e) {
          */
 
         switch (rules[i].token_type) {
-
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+			case '(':
+			case ')':	
+			{
+			tokens[nr_token].type = rules[i].token_type;
+			nr_token++;		
+			}
+			case TK_NUM:
+			{
+			tokens[nr_token].type = rules[i].token_type;
+		   //	tokens[nr_token].str = substr_start;
+			nr_token++;		
+			}
 			default: {}
         }
 
