@@ -9,6 +9,7 @@
 
 void cpu_exec(uint64_t);
 int is_batch_mode();
+bool make_token(char *e);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -26,6 +27,13 @@ static char* rl_gets() {
   }
 
   return line_read;
+}
+
+static int cmd_p(char *args){
+  if(args == NULL)
+	return 0;
+  make_token(args);
+  return 0;
 }
 
 static int cmd_si(char *args) {
@@ -96,6 +104,7 @@ static struct {
   { "si", "single instrument", cmd_si },
   {"info", "show regisiter info", cmd_info},
   {"x", "", cmd_x},
+  {"p", "", cmd_p},
 
   /* TODO: Add more commands */
 
