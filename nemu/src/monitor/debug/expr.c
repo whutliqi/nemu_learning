@@ -24,6 +24,11 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
+  {"\\-",'-'},
+  {"\\*",'*'},
+  {"\\/",'/'},
+  {"\\(",'('},
+  {"\\)",')'},
   {"[0123456789]+",TK_NUM},
 };
 
@@ -81,9 +86,7 @@ static bool make_token(char *e) {
          */
 
         switch (rules[i].token_type) {
-			case '+': {
-					  printf("+ matched\n");
-					  }
+
 			default: {}
         }
 
