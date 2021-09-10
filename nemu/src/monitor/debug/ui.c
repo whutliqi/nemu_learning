@@ -9,7 +9,6 @@
 
 void cpu_exec(uint64_t);
 int is_batch_mode();
-bool make_token(char *e);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -32,7 +31,8 @@ static char* rl_gets() {
 static int cmd_p(char *args){
   if(args == NULL)
 	return 0;
-  make_token(args);
+  bool b;
+  expr(args, &b);
   return 0;
 }
 
