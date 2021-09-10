@@ -7,7 +7,7 @@
 
 enum {
   TK_NOTYPE = 256, TK_EQ,
-
+  TK_NUM,
   /* TODO: Add more token types */
 
 };
@@ -24,6 +24,7 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
+  {"[0123456789]+",TK_NUM},
 };
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]) )
