@@ -4,6 +4,7 @@
  * Type 'man regex' for more information about POSIX regex functions.
  */
 #include <regex.h>
+#include <stdlib.h>
 
 enum {
   TK_NOTYPE = 256, TK_EQ,
@@ -131,7 +132,10 @@ word_t expr(char *e, bool *success) {
 
   /* TODO: Insert codes to evaluate the expression. */
   for(int i = 0 ; i<nr_token; i++){
-	printf("type is %d\n", tokens[i].type); 
+	printf("type is %d\n", tokens[i].type);
+    if(tokens[i].type == 258){
+	printf("value is %d\n",atoi(tokens[i].str));
+	}	
   }
 
   return 0;
