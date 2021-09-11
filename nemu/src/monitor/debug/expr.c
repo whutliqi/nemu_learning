@@ -94,7 +94,8 @@ static bool make_token(char *e) {
 			case ')':	
 			{
 			tokens[nr_token].type = rules[i].token_type;
-			nr_token++;		
+			nr_token++;	
+			break;	
 			}
 			case TK_NUM:
 			{
@@ -102,7 +103,8 @@ static bool make_token(char *e) {
 			for(int index=0; index<substr_len; index++){
 				tokens[nr_token].str[index] = *(substr_start + index);
 			}
-			nr_token++;		
+			nr_token++;
+			break;		
 			}
 			default: {}
         }
