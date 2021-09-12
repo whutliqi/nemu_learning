@@ -63,6 +63,10 @@ static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
 
 static bool make_token(char *e) {
+	Token t0 = {0, {}};
+	for(int i=0; i<32; i++)
+		tokens[i] = t0;
+	nr_token = 0;
   int position = 0;
   int i;
   regmatch_t pmatch;
