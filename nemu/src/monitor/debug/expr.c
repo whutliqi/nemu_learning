@@ -141,7 +141,7 @@ word_t expr(char *e, bool *success) {
   }
    int ans = eval(0, nr_token-1);
 	printf("the ans is %d\n", ans);	
-  return 0;
+  return ans;
 }
 
 bool check_parentheses(int p, int q){
